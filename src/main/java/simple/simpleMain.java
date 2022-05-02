@@ -1,5 +1,6 @@
 package simple;
 
+import example.simple.Simple;
 import example.simple.SimpleOuterClass;
 
 import java.util.Arrays;
@@ -7,7 +8,7 @@ import java.util.Arrays;
 public class simpleMain {
 
     public static void main(String[] args) {
-        SimpleOuterClass.Simple message = SimpleOuterClass.Simple.newBuilder()
+        Simple message = Simple.newBuilder()
                 .setId(42)
                 .setIsSimple(true)
                 .setName("My Name")

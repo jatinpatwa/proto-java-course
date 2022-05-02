@@ -1,5 +1,6 @@
 package io;
 
+import example.simple.Simple;
 import example.simple.SimpleOuterClass;
 
 import java.io.FileInputStream;
@@ -8,7 +9,7 @@ import java.io.IOException;
 
 public class IoMain {
 
-    private static void writeTo(SimpleOuterClass.Simple message, String path) {
+    private static void writeTo(Simple message, String path) {
         try {
             FileOutputStream fos = new FileOutputStream(path);
             message.writeTo(fos);
@@ -21,7 +22,7 @@ public class IoMain {
     private static void readFrom(String path) {
         try {
             FileInputStream fis = new FileInputStream(path);
-            SimpleOuterClass.Simple message = SimpleOuterClass.Simple.parseFrom(fis);
+            Simple message = Simple.parseFrom(fis);
             System.out.println(message);
 
         } catch (IOException e) {
@@ -30,7 +31,7 @@ public class IoMain {
     }
 
     public static void main(String[] args) {
-        SimpleOuterClass.Simple message = SimpleOuterClass.Simple.newBuilder()
+        Simple message = Simple.newBuilder()
                 .setName("A Name")
                 .setIsSimple(true)
                 .setId(34)
